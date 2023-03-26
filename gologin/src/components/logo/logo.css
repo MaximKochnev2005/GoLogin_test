@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+}
+
+.header img {
+    width: 64.66px;
+    height: 32px;
+}
+
+.header .logo-text {
+    color: #000000;
+    width: 92.28px;
+    height: 13.81px;
+    font-weight: bold;
+    margin-left: 13px;
+}

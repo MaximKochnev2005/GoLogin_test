@@ -1,0 +1,48 @@
+.text-input {
+    margin-top: 20px;
+    width: 1120px;
+    height: 200px;
+}
+
+.text-input textarea {
+    background: #FFFFFF;
+    width: 1120px;
+    height: 200px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    border: 8px solid #FFFFFF;
+    border-radius: 12px;
+    display: flex;
+}
+
+.text-input .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+
+}
+
+.text-input .parse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 10px;
+    width: 211px;
+    height: 40px;
+    background: #00A987;
+    border: 0;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 14px;
+    z-index: 3;
+    margin-left: 12px;
+}
+
+.text-input .back {
+    width: 107px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 4px;
+}

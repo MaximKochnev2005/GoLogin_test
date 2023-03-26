@@ -1,0 +1,15 @@
+*{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+    text-decoration: none;
+}
+
+.App{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 63px 160px 80px 160px;
+}
