@@ -5,10 +5,8 @@ export const GlobalContext = createContext(null)
 export const globalReducer = (state, action) => {
     switch (action.type) {
         case 'SET-TABLE':
-            let newTable = state.table.splice()
-            newTable.push(action.payload)
             return {
-                table: newTable,
+                table: action.payload,
                 data: state.data
             }
         case 'SET-DATA':
