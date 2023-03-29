@@ -4,17 +4,17 @@ import {useGlobalContext} from "../../../hooks/useGlobalContext";
 import {parser} from "../../../scripts/parser";
 
 export const TextInput = (props) => {
-    const [text, setText] = useState('')
-    const state = useGlobalContext()
-    const input = useRef()
+    const [text, setText] = useState('');
+    const state = useGlobalContext();
+    const input = useRef();
 
     useEffect(() => {
         if (text.length >= 2) {
-            props.setFileInputActive(false)
-            input.current.style.height = "583px"
+            props.setFileInputActive(false);
+            input.current.style.height = "583px";
         } else {
-            props.setFileInputActive(true)
-            input.current.style.height = "200px"
+            props.setFileInputActive(true);
+            input.current.style.height = "200px";
         }
     })
 
@@ -28,14 +28,14 @@ export const TextInput = (props) => {
             {text.length >= 2 && <div className={"buttons"}>
 
                 <button className={"back"} onClick={() => {
-                    setText('')
+                    setText('');
                 }
                 }>
                     &#8592; Back
                 </button>
                 <button className={"parse"} type={"button"} onClick={() => {
-                    state.dispatch({type: "SET-TABLE", payload: parser(text, [":", "\t"])})
-                    state.dispatch({type: "SET-DATA", payload: text})
+                    state.dispatch({type: "SET-TABLE", payload: parser(text, [":", "\t"])});
+                    state.dispatch({type: "SET-DATA", payload: text});
                 }}>Parse
                 </button>
             </div>}

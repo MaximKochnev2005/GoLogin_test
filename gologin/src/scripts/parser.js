@@ -1,5 +1,4 @@
 export const parser = (data, delimiters) => {
-    console.log(delimiters)
     let table = [];
     let row = [];
     let login = "";
@@ -25,38 +24,37 @@ export const parser = (data, delimiters) => {
         }
 
         if (dataObject[i].indexOf("EAA") !== -1){
-            token = dataObject[i]
-            row.push(token)
+            token = dataObject[i];
+            row.push(token);
         }
         if (dataObject[i].indexOf("@") !== -1 && dataObject[i - 1].indexOf('"') === -1 && dataObject[i + 1].indexOf('"') === -1){
-            console.log(dataObject[i])
-            login = dataObject[i]
-            password = dataObject[i + 1]
-            notes_param = dataObject[i - 1]
-            row.push(login)
-            row.push(password)
+            login = dataObject[i];
+            password = dataObject[i + 1];
+            notes_param = dataObject[i - 1];
+            row.push(login);
+            row.push(password);
         }
         if (dataObject[i] === "https") {
-            notes.push(dataObject[i])
-            notes.push(dataObject[i + 1])
-            notes.push(notes_param)
+            notes.push(dataObject[i]);
+            notes.push(dataObject[i + 1]);
+            notes.push(notes_param);
             for (let x = i + 1; x < dataObject.length; x++){
                 if (dataObject[x].indexOf('[{"domain"') !== -1){
-                    break
+                    break;
                 }
-                notes.push(dataObject[x])
+                notes.push(dataObject[x]);
             }
-            row.push(notes)
+            row.push(notes);
         }
         if (dataObject[i] === '[{"domain"') {
             for (let x = i; x < dataObject.length; x++){
                 if (dataObject[x].indexOf('}]') !== -1){
-                    cookies.push(dataObject[x])
-                    break
+                    cookies.push(dataObject[x]);
+                    break;
                 }
-                cookies.push(dataObject[x])
+                cookies.push(dataObject[x]);
             }
-            row.push(cookies)
+            row.push(cookies);
         }
     }
     return table;

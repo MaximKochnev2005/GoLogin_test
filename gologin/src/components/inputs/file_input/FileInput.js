@@ -6,25 +6,25 @@ import {parser} from "../../../scripts/parser";
 import {useGlobalContext} from "../../../hooks/useGlobalContext";
 
 export const FileInput = (props) => {
-    const [file, setFile] = useState()
-    const file_input = useRef()
-    const state = useGlobalContext()
+    const [file, setFile] = useState();
+    const file_input = useRef();
+    const state = useGlobalContext();
 
     const uploadFile = (event) => {
-        props.setTextInputActive(false)
-        setFile(event.target.files[0])
+        props.setTextInputActive(false);
+        setFile(event.target.files[0]);
     }
 
     const handleFile = (e) => {
         const content = e.target.result;
-        state.dispatch({type: "SET-TABLE", payload: parser(content, [":", "\t"])})
-        state.dispatch({type: "SET-DATA", payload: content})
+        state.dispatch({type: "SET-TABLE", payload: parser(content, [":", "\t"])});
+        state.dispatch({type: "SET-DATA", payload: content});
     }
 
     const readFile = (file) => {
-        const reader = new FileReader()
+        const reader = new FileReader();
         reader.onload = handleFile;
-        reader.readAsText(file)
+        reader.readAsText(file);
     }
 
     return (
@@ -33,7 +33,7 @@ export const FileInput = (props) => {
                    accept='.csv'
                    accept='.txt'
                    onChange={(e) => {
-                uploadFile(e)
+                uploadFile(e);
             }}/>
             <div className={"information"}>
                 { !file ?
@@ -46,11 +46,11 @@ export const FileInput = (props) => {
                     <>
                         <img className={"file-image"} src={file_image} alt=""/>
                         <div className={'description'}>File name {file.name}</div>
-                        <button className={"parse"} type={"button"} onClick={() => {readFile(file)}}>Parse</button>
+                        <button className={"parse"} type={"button"} onClick={() => {readFile(file);}}>Parse</button>
                         <div className={"cancel"} onClick={() => {
-                            file_input.current.value = ''
-                            setFile(file_input.current.value)
-                            props.setTextInputActive(true)
+                            file_input.current.value = '';
+                            setFile(file_input.current.value);
+                            props.setTextInputActive(true);
                         }}>Cancel</div>
                     </>
                 }

@@ -5,7 +5,7 @@ import {useGlobalContext} from "./hooks/useGlobalContext";
 import {Result} from "./pages/results/Result";
 
 function App() {
-    const state = useGlobalContext()
+    const state = useGlobalContext();
 
     return (
         <div className="App">

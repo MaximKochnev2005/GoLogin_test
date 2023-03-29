@@ -63,17 +63,32 @@ export const Result = () => {
                     </thead>
                     <tbody>
                     {state.table?.map((row, index) => {
+                        console.log(row[3])
                         return (
                             <tr className={"row"}>
                                 <td className={"row-elem"}>{index}</td>
                                 <td className={"row-elem"}>Waiting</td>
-                                <td className={"row-elem"}>{row[0].split("").slice(0, 15).join("")}...</td>
-                                <td className={"row-elem"}>{row[1].split("").slice(0, 15).join("")}...</td>
-                                <td className={"row-elem"}>{row[2].split("").slice(0, 15).join("")}...</td>
-                                <td className={"row-elem"}>{row[0].split("").slice(0, 15).join("")}...</td>
-                                <td className={"row-elem"}>{row[1].split("").slice(0, 15).join("")}...</td>
-                                <td className={"row-elem"}>{row[4].join().split("").slice(0, 15).join("")}...</td>
-                                <td className={"row-elem"}>{row[3].join().split("").slice(0, 15).join("")}...</td>
+                                <td className={"row-elem"}>{
+                                    row[0].length < 16 ? row[0] : row[0].split("").slice(0, 15).join("")+"..."
+                                }</td>
+                                <td className={"row-elem"}>{
+                                    row[1].length < 16 ? row[1] : row[1].split("").slice(0, 15).join("")+"..."
+                                }</td>
+                                <td className={"row-elem"}>{
+                                    row[2].length < 16 ? row[2] : row[2].split("").slice(0, 15).join("")+"..."
+                                }</td>
+                                <td className={"row-elem"}>{
+                                    row[0].length < 16 ? row[0] : row[0].split("").slice(0, 15).join("")+"..."
+                                }</td>
+                                <td className={"row-elem"}>{
+                                    row[1].length < 16 ? row[1] : row[1].split("").slice(0, 15).join("")+"..."
+                                }</td>
+                                <td className={"row-elem"}>{
+                                    row[4].join().length < 16 ? row[4] : row[4].join().split("").slice(0, 15).join("")+"..."
+                                }</td>
+                                <td className={"row-elem"}>{
+                                    row[3].join().length < 16 ? row[3] : row[3].join().split("").slice(0, 15).join("")+"..."
+                                }</td>
                             </tr>
                         )
                     })}

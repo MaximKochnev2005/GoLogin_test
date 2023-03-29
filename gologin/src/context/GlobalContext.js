@@ -28,7 +28,7 @@ export const GlobalContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(globalReducer, {
         table: [],
         data: ""
-    })
+    });
 
     return (
         <GlobalContext.Provider value={{...state, dispatch}}>
